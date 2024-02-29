@@ -465,6 +465,15 @@ public class BankMain {
 					
 					//Check Account Total balance
 					
+					System.out.println("Enter the account number : ");
+					long accNo = sc.nextLong();
+					
+					int index = searchAccount(acc, accNo);
+					if(index!=-1) {
+						System.out.println(acc[index].getAccBal());
+					}else {
+						System.out.println("Account not found");
+					}
 					
 					
 					break;
