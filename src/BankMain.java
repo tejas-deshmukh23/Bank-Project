@@ -470,11 +470,45 @@ public class BankMain {
 					
 					int index = searchAccount(acc, accNo);
 					if(index!=-1) {
-						System.out.println(acc[index].getAccBal());
+						System.out.println("Account Balance :: "+acc[index].getAccBal());
 					}else {
 						System.out.println("Account not found");
 					}
 					
+					
+					break;
+				}
+				
+				case 8:{
+					
+					//Overdraft Limit Check
+					
+					System.out.println("Enter the account Number to check the Overdraft Limit : ");
+					long accNo = sc.nextLong();
+					int index = searchAccount(acc, accNo);
+					if(index!=-1) {
+						
+//						if(acc[index].getAccountDescription().equals("Current"))
+//						{
+							//Downcasting account to current account to access the special functions of CurrentAccount
+//							CurrentAccount ca = (CurrentAccount)acc[index];
+//							System.out.println("Overdraft Limit :: "+ca.getOverdraftLimit());
+							
+							//or
+							
+							if(acc[index] instanceof CurrentAccount) {
+								//Downcasting account to current account to access the special functions of CurrentAccount
+								CurrentAccount ca = (CurrentAccount)acc[index];
+								System.out.println("Overdraft Limit :: "+ca.getOverdraftLimit());
+							}
+							else {
+								System.out.println("AccountType : '"+acc[index].getAccountDescription()+"' doesn't have Overdraft Limit");
+							}
+//						}
+						
+					}else {
+						System.out.println("Account with this account number not found");
+					}
 					
 					break;
 				}
