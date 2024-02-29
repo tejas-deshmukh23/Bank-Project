@@ -460,6 +460,16 @@ public class BankMain {
 					/////////////////////////////////////////////////
 					
 				}
+				
+				case 7 :{
+					
+					//Check Account Total balance
+					
+					
+					
+					break;
+				}
+				
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + ch);
 			}
